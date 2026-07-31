@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Make the layout scale correctly on phones and tablets. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    
+</head>
+
+<body>
+    <!-- ============================================================
+         Game tools
+         ============================================================ -->
+    <details id="gamePanel" open>
+        <summary>🎲 Dice</summary>
+        <div class="panelBody">
+            <div id="diceRow" aria-label="Dice result">
+                <span id="die1" class="die">⚀</span>
+                <span id="die2" class="die">⚀</span>
+            </div>
+            <div class="panelButtons">
+                <button id="rollDice" type="button" title="Roll two dice">
+                    🎲
+                </button>
+            </div>
+            <div id="diceTotal" aria-live="polite">
+                Total: 2
+            </div>
+        </div>
+    </details>
+    <!-- ============================================================
+         Counter
+         ============================================================ -->
+    <div id="counter" class="card" title="Shift+Enter resets the counter">
+        <div id="counter-controls">
+            <button id="minus" type="button" title="Decrease (Arrow Left / Arrow Down)" aria-label="Decrease counter">
+                −
+            </button>
+            <div id="display" aria-live="polite">0</div>
+            <button id="plus" type="button" title="Increase (Arrow Right / Arrow Up)" aria-label="Increase counter">
+                +
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ============================================================
+         Current session sparkline
+         ============================================================ -->
+    <section id="currentSessionPanel" class="card">
+        <div class="sectionHeader">
+            <h2 class="sectionTitle">Current Session</h2>
+            <div id="session-buttons">
+                <button id="resetCounter" type="button" title="Archive and reset counter">
+                    Archive Session &amp; Reset
+                </button>
+                <button id="deleteCurrentSession" class="dangerButton" type="button"
+                    title="Discard the current session without archiving it">
+                    Clear Current Session
+                </button>
+            </div>
+
+        </div>
+        <div id="sparklineLabel">
+            Every counter value in this session
+        </div>
+        <canvas id="sparkline" class="sparkline" role="img"
+            aria-label="Graph of current session counter values"></canvas>
+        <div id="currentSessionMeta"></div>
+    </section>
+    <!-- ============================================================
+        All-time high and low
+        ============================================================ -->
+    <section id="records" class="card">
+        <h2 class="sectionTitle">All-Time Records</h2>
+        <div class="recordGrid">
+            <div class="recordBox">
+                <div class="recordLabel">High score</div>
+                <div id="highValue" class="recordValue">0</div>
+                <div id="highTime" class="recordTime">Not recorded yet</div>
+            </div>
+            <div class="recordBox">
+                <div class="recordLabel">Low score</div>
+                <div id="lowValue" class="recordValue">0</div>
+                <div id="lowTime" class="recordTime">Not recorded yet</div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================================
+        Archived sessions and export tools
+        ============================================================ -->
+    <section id="archivePanel" class="card">
+        <h2 class="sectionTitle">Session Archive</h2>
+        <div class="archiveToolbar">
+            <button id="exportJson" class="utilityButton" type="button">
+                Export JSON
+            </button>
+            <button id="exportCsv" class="utilityButton" type="button">
+                Export CSV
+            </button>
+        </div>
+        <div id="archiveSummary"></div>
+        <div id="emptyArchive">No completed sessions yet.</div>
+        <div id="sessionList"></div>
+    </section>
+
+</body>
+
+</html>
