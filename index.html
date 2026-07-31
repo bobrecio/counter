@@ -6,7 +6,7 @@
     <!-- Make the layout scale correctly on phones and tablets. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
-    
+    <link rel="stylesheet" href="./counter.css">
 </head>
 
 <body>
@@ -20,14 +20,16 @@
                 <span id="die1" class="die">⚀</span>
                 <span id="die2" class="die">⚀</span>
             </div>
+            <div id="diceTotal" aria-live="polite">
+                Total: 2
+            </div>
             <div class="panelButtons">
                 <button id="rollDice" type="button" title="Roll two dice">
                     🎲
                 </button>
             </div>
-            <div id="diceTotal" aria-live="polite">
-                Total: 2
-            </div>
+            <input id="chkKeepScore" type="checkbox" title="Keep Score" value="false">
+            <label>Keep Score</label>
         </div>
     </details>
     <!-- ============================================================
@@ -105,7 +107,7 @@
         <div id="emptyArchive">No completed sessions yet.</div>
         <div id="sessionList"></div>
     </section>
-
+    <script src="./counter.js"></script>
 </body>
 
 </html>

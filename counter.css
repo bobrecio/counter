@@ -1,39 +1,38 @@
-
 /* ============================================================
     Page layout
     ============================================================ */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    padding: 5vh 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    font-family: Arial, sans-serif;
-    background: lightslategray;
-    color: white;
+  margin: 0;
+  min-height: 100vh;
+  padding: 5vh 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-family: Arial, sans-serif;
+  background: lightslategray;
+  color: white;
 }
 
 /* ============================================================
     Shared cards and panels
     ============================================================ */
 .card {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    background: #555;
-    box-shadow: 3px 3px 5px black;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  background: #555;
+  box-shadow: 3px 3px 5px black;
 }
 
 .sectionTitle {
-    margin: 0;
-    padding: 14px 18px 8px;
-    font-size: 1.15rem;
+  margin: 0;
+  padding: 14px 18px 8px;
+  font-size: 1.15rem;
 }
 
 /*
@@ -41,383 +40,384 @@ body {
     action button on the same line.
 */
 .sectionHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 12px 18px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px 8px;
 }
 
 .sectionHeader .sectionTitle {
-    padding: 0;
+  padding: 0;
 }
 
 /* Destructive action styling for deleting the active session. */
 .dangerButton {
-    width: auto;
-    min-width: 0;
-    height: 38px;
-    margin: 0;
-    padding: 0 12px;
-    background: #b22222;
-    color: white;
-    border-color: #ffb3b3;
-    font-size: 0.82rem;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.65);
+  width: auto;
+  min-width: 0;
+  height: 38px;
+  margin: 0;
+  padding: 0 12px;
+  background: #b22222;
+  color: white;
+  border-color: #ffb3b3;
+  font-size: 0.82rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.65);
 }
 
 .dangerButton:hover {
-    filter: brightness(1.12);
+  filter: brightness(1.12);
 }
 
 .muted {
-    opacity: 0.78;
+  opacity: 0.78;
 }
 
 /* ============================================================
     Counter
     ============================================================ */
 #counter {
-    transition: background-color 0.25s;
+  transition: background-color 0.25s;
 }
 
 #counter-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#chkKeepScore {
+  font-size: 2rem;
 }
 
 #display {
-    flex: 1;
-    min-width: 0;
-    margin: 0 10px;
-    font-size: clamp(6rem, 24vw, 12rem);
-    font-weight: 600;
-    line-height: 1.1;
-    color: white;
-    text-shadow: 3px 3px 5px black;
-    overflow-wrap: anywhere;
+  flex: 1;
+  min-width: 0;
+  margin: 0 10px;
+  font-size: clamp(6rem, 24vw, 12rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  overflow-wrap: anywhere;
 }
 
 /* ============================================================
     Buttons
     ============================================================ */
 button {
-    min-width: 80px;
-    height: 80px;
-    margin: 0 20px;
-    font-size: 3em;
-    cursor: pointer;
-    border: 2px solid silver;
-    border-radius: 10px;
-    box-shadow: 0 0 15px black;
-    touch-action: none;
-    user-select: none;
-    -webkit-user-select: none;
-    transition:
-        transform 0.06s,
-        box-shadow 0.06s,
-        filter 0.06s;
+  min-width: 80px;
+  height: 80px;
+  margin: 0 20px;
+  font-size: 3em;
+  cursor: pointer;
+  border: 2px solid silver;
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:
+    transform 0.06s,
+    box-shadow 0.06s,
+    filter 0.06s;
 }
 
 #minus {
-    background: lightcoral;
+  background: lightcoral;
 }
 
 #plus {
-    background: lightgreen;
+  background: lightgreen;
 }
 
 button:active,
 button.pressed {
-    transform: translateY(3px);
-    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.6);
-    filter: brightness(0.85);
+  transform: translateY(3px);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.6);
+  filter: brightness(0.85);
 }
 
 button:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .utilityButton {
-    width: auto;
-    min-width: 0;
-    height: 44px;
-    margin: 0;
-    padding: 0 14px;
-    background: steelblue;
-    color: white;
-    font-size: 0.95rem;
+  width: auto;
+  min-width: 0;
+  height: 44px;
+  margin: 0;
+  padding: 0 14px;
+  background: steelblue;
+  color: white;
+  font-size: 0.95rem;
 }
 
 /* ============================================================
     High and low scores
     ============================================================ */
 #records {
-    padding: 14px 18px 18px;
+  padding: 14px 18px 18px;
 }
 
 .recordGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .recordBox {
-    padding: 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .recordLabel {
-    margin-bottom: 4px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.8;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
 }
 
 .recordValue {
-    font-size: 2rem;
-    font-weight: bold;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .recordTime {
-    margin-top: 4px;
-    font-size: 0.78rem;
-    line-height: 1.35;
-    opacity: 0.78;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  opacity: 0.78;
 }
 
 /* ============================================================
     Current sparkline
     ============================================================ */
 #currentSessionPanel {
-    padding-bottom: 18px;
+  padding-bottom: 18px;
 }
 
 #sparklineLabel {
-    padding: 0 18px 8px;
-    font-size: 0.85rem;
-    opacity: 0.8;
+  padding: 0 18px 8px;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 #session-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 50%;
 
-    button {
-        width: 100%;
-        height: 40px;
-        margin: 3px;
-        font-size: 1rem;
-
-
-    }
+  button {
+    width: 100%;
+    height: 40px;
+    margin: 3px;
+    font-size: 1rem;
+  }
 }
 
 canvas.sparkline {
-    display: block;
-    width: calc(100% - 36px);
-    height: 100px;
-    margin: 0 18px;
-    background: rgba(0, 0, 0, 0.18);
-    border-radius: 8px;
+  display: block;
+  width: calc(100% - 36px);
+  height: 100px;
+  margin: 0 18px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
 }
 
 #currentSessionMeta {
-    padding: 8px 18px 0;
-    font-size: 0.78rem;
-    opacity: 0.75;
+  padding: 8px 18px 0;
+  font-size: 0.78rem;
+  opacity: 0.75;
 }
 
 #resetCounter {
-    background: steelblue;
-    color: white;
+  background: steelblue;
+  color: white;
 }
-
 
 /* ============================================================
     Game tools
     ============================================================ */
 details {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px black;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px black;
 }
 
 summary {
-    padding: 12px;
-    cursor: pointer;
-    user-select: none;
-    background: #444;
-    border-radius: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
+  padding: 12px;
+  cursor: pointer;
+  user-select: none;
+  background: #444;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 details[open] summary {
-    border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .panelBody {
-    padding: 20px;
-    text-align: center;
-    background: #555;
-    border-radius: 0 0 10px 10px;
+  padding: 20px;
+  text-align: center;
+  background: #555;
+  border-radius: 0 0 10px 10px;
 }
 
 #diceRow {
-    min-height: 170px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    font-size: clamp(6rem, 24vw, 10rem);
-    line-height: 1;
+  min-height: 170px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: clamp(6rem, 24vw, 10rem);
+  line-height: 1;
 }
 
 .die {
-    display: inline-block;
-    transition: transform 0.08s;
+  display: inline-block;
+  transition: transform 0.08s;
 }
 
 .die.rolling {
-    transform: rotate(12deg) scale(1.08);
+  transform: rotate(12deg) scale(1.08);
 }
 
 .panelButtons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
 }
 
 .panelButtons button {
-    width: 160px;
-    height: 60px;
-    margin: 0;
-    background: steelblue;
-    color: white;
-    font-size: 1.2em;
+  width: 160px;
+  height: 60px;
+  margin: 0;
+  background: steelblue;
+  color: white;
+  font-size: 1.2em;
 }
 
 #diceTotal {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 /* ============================================================
     Session archive and exports
     ============================================================ */
 #archivePanel {
-    padding-bottom: 18px;
+  padding-bottom: 18px;
 }
 
 .archiveToolbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0 18px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 18px 14px;
 }
 
 #archiveSummary {
-    padding: 0 18px 12px;
-    font-size: 0.85rem;
-    opacity: 0.8;
+  padding: 0 18px 12px;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 #sessionList {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 18px;
 }
 
 .sessionCard {
-    padding: 12px;
-    border-radius: 9px;
-    background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .sessionHeader {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
 .sessionName {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .sessionDate {
-    font-size: 0.75rem;
-    text-align: right;
-    opacity: 0.75;
+  font-size: 0.75rem;
+  text-align: right;
+  opacity: 0.75;
 }
 
 .sessionStats {
-    margin-bottom: 8px;
-    font-size: 0.8rem;
-    opacity: 0.82;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  opacity: 0.82;
 }
 
 .sessionCard canvas {
-    width: 100%;
-    height: 80px;
-    margin: 0;
+  width: 100%;
+  height: 80px;
+  margin: 0;
 }
 
 #emptyArchive {
-    padding: 0 18px;
-    opacity: 0.75;
+  padding: 0 18px;
+  opacity: 0.75;
 }
 
 /* ============================================================
     Small-screen adjustments
     ============================================================ */
 @media (max-width: 520px) {
-    body {
-        padding-top: 24px;
-    }
+  body {
+    padding-top: 24px;
+  }
 
-    button {
-        width: 64px;
-        height: 64px;
-        margin: 0 10px;
-        font-size: 2.4em;
-    }
+  button {
+    width: 64px;
+    height: 64px;
+    margin: 0 10px;
+    font-size: 2.4em;
+  }
 
-    #counter-controls {
-        padding-top: 10px;
-    }
+  #counter-controls {
+    padding-top: 10px;
+  }
 
-    .recordGrid {
-        grid-template-columns: 1fr;
-    }
+  .recordGrid {
+    grid-template-columns: 1fr;
+  }
 
-    .sectionHeader {
-        align-items: flex-start;
-    }
+  .sectionHeader {
+    align-items: flex-start;
+  }
 
-    .dangerButton {
-        height: 36px;
-        padding: 0 10px;
-        font-size: 0.74rem;
-    }
+  .dangerButton {
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.74rem;
+  }
 
-    .sessionHeader {
-        flex-direction: column;
-    }
+  .sessionHeader {
+    flex-direction: column;
+  }
 
-    .sessionDate {
-        text-align: left;
-    }
+  .sessionDate {
+    text-align: left;
+  }
 }
