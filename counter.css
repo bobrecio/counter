@@ -73,6 +73,11 @@ body {
   opacity: 0.78;
 }
 
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
 /* ============================================================
     Counter
     ============================================================ */
@@ -101,6 +106,35 @@ body {
   color: white;
   text-shadow: 3px 3px 5px black;
   overflow-wrap: anywhere;
+}
+/* ============================================================
+    Dice Panel
+    ============================================================ */
+#diceGame {
+  display: flex;
+  flex-direction: row;
+}
+
+#dicePanel {
+  width: 50%;
+}
+
+#scoringPanel {
+  visibility: visible;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  #opening-roll-div {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+
+    #opening-roll-value {
+      font-size: 8rem;
+    }
+  }
 }
 
 /* ============================================================

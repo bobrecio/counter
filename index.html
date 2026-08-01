@@ -15,26 +15,34 @@
          ============================================================ -->
     <details id="gamePanel" class="card" open>
         <summary>🎲 Dice</summary>
-        <div class="panelBody">
-            <div id="diceRow" aria-label="Dice result">
-                <span id="die1" class="die">⚀</span>
-                <span id="die2" class="die">⚀</span>
+        <div id="diceGame" class="panelBody">
+            <div id="dicePanel">
+                <div id="diceRow" aria-label="Dice result">
+                    <span id="die1" class="die">⚀</span>
+                    <span id="die2" class="die">⚀</span>
+                </div>
+                <div id="diceTotal" aria-live="polite">
+                    Total: 2
+                </div>
+                <div class="panelButtons">
+                    <button id="rollDice" type="button" title="Roll two dice">
+                        🎲
+                    </button>
+
+                </div>
+                <div id="chkBoxRow">
+                    <input type="checkbox" id="chkKeepScore" title="Keep Score" value="false">Keep Score
+                </div>
             </div>
-            <div id="diceTotal" aria-live="polite">
-                Total: 2
-            </div>
-            <div class="panelButtons">
-                <button id="rollDice" type="button" title="Roll two dice">
-                    🎲
-                </button>
+            <div id="scoringPanel">
+                <div id="opening-roll-div" class="full-width">
+                    <label>Point</label><br>
+                    <label id="opening-roll-value">0</label>
+                </div>
+
             </div>
 
         </div>
-    </details>
-    <details id="scorePanel" class="card">
-        <summary>
-            Keep Score</summary>
-        <div class="panelBody"></div>
     </details>
     <!-- ============================================================
          Counter
