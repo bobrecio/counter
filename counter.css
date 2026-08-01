@@ -23,7 +23,7 @@ body {
     ============================================================ */
 .card {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   border-radius: 12px;
   background: #555;
   box-shadow: 3px 3px 5px black;
@@ -83,7 +83,7 @@ body {
 #counter-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 #display {
-  flex: 1;
+  /* flex: 1; */
   min-width: 0;
   margin: 0 10px;
   font-size: clamp(6rem, 24vw, 12rem);
@@ -273,11 +273,11 @@ details[open] summary {
 }
 
 #diceRow {
-  min-height: 170px;
-  margin-bottom: 10px;
+  /* min-height: 170px; */
+  /* margin-bottom: 10px; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px;
   font-size: clamp(6rem, 24vw, 10rem);
   line-height: 1;
@@ -296,7 +296,7 @@ details[open] summary {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .panelButtons button {
@@ -311,6 +311,7 @@ details[open] summary {
 #diceTotal {
   font-size: 1.5em;
   font-weight: bold;
+  margin: 5px;
 }
 
 /* ============================================================

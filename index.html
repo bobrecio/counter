@@ -13,7 +13,7 @@
     <!-- ============================================================
          Game tools
          ============================================================ -->
-    <details id="gamePanel" open>
+    <details id="gamePanel" class="card" open>
         <summary>🎲 Dice</summary>
         <div class="panelBody">
             <div id="diceRow" aria-label="Dice result">
@@ -28,9 +28,13 @@
                     🎲
                 </button>
             </div>
-            <input id="chkKeepScore" type="checkbox" title="Keep Score" value="false">
-            <label>Keep Score</label>
+
         </div>
+    </details>
+    <details id="scorePanel" class="card">
+        <summary>
+            Keep Score</summary>
+        <div class="panelBody"></div>
     </details>
     <!-- ============================================================
          Counter
