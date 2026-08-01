@@ -116,23 +116,22 @@ body {
 }
 
 #dicePanel {
-  width: 50%;
+  width: 100%;
 }
 
 #scoringPanel {
-  visibility: visible;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  visibility: hidden;
+  width: 0;
 
-  #opening-roll-div {
-    font-size: 1.5rem;
+  #point-div {
+    height: 100%;
+    width: 50%;
+    font-size: 3rem;
     font-weight: 600;
     margin: 20px 0;
 
-    #opening-roll-value {
-      font-size: 8rem;
+    #point-value {
+      font-size: 10rem;
     }
   }
 }

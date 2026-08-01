@@ -60,6 +60,7 @@ let sparkline;
 let currentSessionMeta;
 let deleteCurrentSessionButton;
 let rollButton;
+let pointValue;
 let die1;
 let die2;
 let rollCount;
@@ -70,6 +71,9 @@ let archiveSummary;
 let emptyArchive;
 let sessionList;
 let keepScore;
+let scoringPanel;
+let pointDiv;
+let diceValue;
 // ============================================================
 // Initialization
 // ============================================================
@@ -113,6 +117,9 @@ function cacheElements() {
   emptyArchive = document.getElementById('emptyArchive');
   sessionList = document.getElementById('sessionList');
   keepScore = document.getElementById('chkKeepScore');
+  scoringPanel = document.getElementById('scoringPanel');
+  pointDiv = document.getElementById('point-div');
+  pointValue = document.getElementById('point-value');
 }
 /*
     Attach all event handlers in one place.
@@ -132,6 +139,17 @@ function wireEvents() {
   exportJsonButton.addEventListener('click', exportAsJson);
   exportCsvButton.addEventListener('click', exportAsCsv);
   document.addEventListener('keydown', handleKeyDown);
+  keepScore.addEventListener('change', (event) => {
+    if (event.target.checked) {
+      scoringPanel.style.visibility = 'visible';
+      scoringPanel.style.width = '50%';
+      keepScore = true;
+    } else {
+      scoringPanel.style.visibility = 'hidden';
+      scoringPanel.style.width = '0%';
+      keepScore = false;
+    }
+  });
   /*
         Redraw canvases after resizing so they remain sharp.
     */
@@ -799,10 +817,39 @@ function rollDiceAnimated() {
     rollButton.disabled = false;
     rollButton.focus();
   }, DICE_ANIMATION_DURATION_MS);
-  /*
-  if(keepScore === true){
-    if(rollCount = 1)
-  }*/
+
+  if (keepScore) {
+    diceValue = finalDie1 + finalDie2;
+    console.log(rollCount++);
+    if ((rollCount = 1)) {
+      // --- COME-OUT ROLL ---
+      if ([2, 3, 12].includes(diceTotal)) {
+        console.log('CRAPS');
+        minusButton.click(); // Loss (Craps) -> Next roll remains Come-Out
+      } else if ([7, 11].includes(diceTotal)) {
+        console.log('NATURAL');
+        plusButton.click(); // Win (Natural) -> Next roll remains Come-Out
+      } else {
+        // Point established
+        console.log('POINT SET: ' + diceTotal);
+        pointDiv.text = diceTotal;
+        pointValue = diceTotal;
+        rollCount++;
+      }
+    } else {
+      // --- POINT ROLLS ---
+      if (diceTotal === 7) {
+        console.log('7-OUT / LOSS');
+        minusButton.click(); // Seven-out (Loss)
+        rollCount = 0; // Reset to Come-Out state
+      } else if (diceValue === pointValue) {
+        console.log('POINT HIT / WIN');
+        plusButton.click(); // Point hit (Win)
+        rollCount = 0; // Reset to Come-Out state
+      }
+      // Any other number rolled -> Keep current rollCount, roll again
+    }
+  }
 }
 function randomDieValue() {
   return Math.floor(Math.random() * 6) + 1;
